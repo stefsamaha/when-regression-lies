@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "regression-lies"
+version = "1.0.0"
+description = "Monte Carlo investigation of OLS regression, linear algebra, statistical inference, and violated model assumptions."
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "scipy>=1.10", "matplotlib>=3.7", "pandas>=2.0"]
+
+[project.optional-dependencies]
+test = ["pytest", "statsmodels>=0.14"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
