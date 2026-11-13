@@ -2,7 +2,7 @@
 
 A Monte Carlo study of ordinary least squares: when its guarantees hold, when they break, and what breaks first.
 
-After my linear algebra and regression midterm I could derive $\hat\beta = (X'X)^{-1}X'y$ and list the assumptions behind it, but I had never seen what actually happens when one of them fails. So I set up an experiment where I know the truth. I simulate $Y = 2 + 3X + \varepsilon$ thousands of times, fit OLS each time, and check whether the estimates, standard errors, confidence intervals and p-values do what the theory promises. Then I break one assumption at a time and measure the damage.
+Deriving $\hat\beta = (X'X)^{-1}X'y$ and listing the assumptions behind it is easy. Seeing what actually happens when one of them fails is less so. So I set up an experiment where the truth is known: I simulate $Y = 2 + 3X + \varepsilon$ thousands of times, fit OLS each time, and check whether the estimates, standard errors, confidence intervals and p-values do what the theory promises. Then I break one assumption at a time and measure the damage.
 
 Everything is written from scratch in NumPy (QR, normal equations, SVD, hat matrix, classical and robust covariance estimators, t and F tests, leverage, Cook's distance) and tested against `statsmodels` to 10 significant digits.
 
